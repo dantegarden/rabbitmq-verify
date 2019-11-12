@@ -1,0 +1,29 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: verify-direct-consumer
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 192.168.3.200
+    port: 5672
+    listener:
+      direct:
+        retry:
+          enabled: true #开启重试
+          max-attempts: 3 #默认就是重试3次
+
+#自定义配置
+mq:
+  config:
+    exchange: log.direct #设置交换器名
+    queue:
+      info:
+        queue-name: log.info #队列名称
+        routing-key: log.info.routing.key #路由键
+      error:
+        queue-name: log.error
+        routing-key: log.error.routing.key
+

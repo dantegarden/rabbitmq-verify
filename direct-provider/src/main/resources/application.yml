@@ -1,0 +1,22 @@
+server:
+  port: 8092
+
+spring:
+  application:
+    name: verify-direct-provider
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 192.168.3.200
+    port: 5672
+
+#自定义配置
+mq:
+  config:
+    exchange: log.direct #设置交换器名
+    queue:
+      info:
+        routing-key: log.info.routing.key #路由键
+      error:
+        routing-key: log.error.routing.key
+

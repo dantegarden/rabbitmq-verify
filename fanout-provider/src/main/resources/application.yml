@@ -1,0 +1,17 @@
+server:
+  port: 8098
+
+spring:
+  application:
+    name: verify-fanout-provider
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 192.168.3.200
+    port: 5672
+
+#自定义配置
+mq:
+  config:
+    exchange: order.fanout #设置交换器名
+

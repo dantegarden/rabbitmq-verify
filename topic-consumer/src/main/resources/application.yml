@@ -1,0 +1,24 @@
+server:
+  port: 8096
+
+spring:
+  application:
+    name: verify-topic-consumer
+  rabbitmq:
+    username: guest
+    password: guest
+    host: 192.168.3.200
+    port: 5672
+
+#自定义配置
+mq:
+  config:
+    exchange: log.topic #设置交换器名
+    queue:
+      info:
+        queue-name: log.info #队列名称
+      error:
+        queue-name: log.error
+      logs:
+        queue-name: log.all
+
